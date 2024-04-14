@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 """Module Documentation"""
-from math import factorial
+
+
+def factorial(number):
+    """Factorial Function"""
+    fact = 1
+    for i in range(number):
+        fact *= i + 1
+    return fact
 
 
 def pascal_triangle(n):
-    """Function Documentation"""
+    """Pascal's triangle function"""
     my_list = []
     if n <= 0:
         return my_list
