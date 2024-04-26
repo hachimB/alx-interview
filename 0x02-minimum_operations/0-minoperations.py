@@ -3,6 +3,7 @@
 
 
 def minOperations(n):
+    """minOperations"""
     operations = 0
     i = 2
     while i * i <= n:
