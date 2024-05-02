@@ -10,12 +10,14 @@ line_counter = 0
 
 
 def print_stats():
+    """print_stats"""
     print("File size: {}".format(total_size))
     for code in sorted(status_codes.keys()):
         print("{}: {}".format(code, status_codes[code]))
 
 
 def signal_handler(sig, frame):
+    """signal_handler"""
     print_stats()
     sys.exit(0)
 
