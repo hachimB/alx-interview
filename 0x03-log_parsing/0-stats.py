@@ -20,7 +20,7 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 for line in sys.stdin:
-    match = re.match(r'^\S+ - \[\S+\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)$', line)
+    match = re.match(r'^\S+ - \[.*\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)$', line)
     if match:
         code = int(match.group(1))
         size = int(match.group(2))
