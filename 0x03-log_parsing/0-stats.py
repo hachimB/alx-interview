@@ -13,7 +13,7 @@ def print_stats():
     """print_stats"""
     print("File size: {}".format(total_size))
     for code in sorted(status_codes.keys()):
-        if isinstance(code, int):
+        if isinstance(code, int) and code in (200, 301, 400, 401, 403, 404, 405, 500):
             print("{}: {}".format(code, status_codes[code]))
 
 
