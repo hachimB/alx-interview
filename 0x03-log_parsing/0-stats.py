@@ -20,10 +20,11 @@ def print_stats():
 def signal_handler(sig, frame):
     """signal_handler"""
     print_stats()
+    sys.stdout.flush()
     sys.exit(0)
 
 
-#signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGINT, signal_handler)
 
 for line in sys.stdin:
     match = re.match(
