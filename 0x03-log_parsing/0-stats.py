@@ -25,20 +25,6 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-# for line in sys.stdin:
-#     match = re.match(
-#         r'^\S+ - \[.*\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)$',
-#         line)
-#     if match:
-#         code = int(match.group(1))
-#         size = int(match.group(2))
-#         status_codes[code] = status_codes.get(code, 0) + 1
-#         total_size += size
-#         line_counter += 1
-#         if line_counter % 10 == 0:
-#             print_stats()
-
-# print_stats()
 for line in sys.stdin:
     match = re.match(
         r'^\S+ - \[.*\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)$',
@@ -46,10 +32,7 @@ for line in sys.stdin:
     if match:
         code = int(match.group(1))
         size = int(match.group(2))
-        if code in status_codes:
-            status_codes[code] += 1
-        else:
-            status_codes[code] = 1
+        status_codes[code] = status_codes.get(code, 0) + 1
         total_size += size
         line_counter += 1
         if line_counter % 10 == 0:
