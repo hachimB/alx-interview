@@ -16,4 +16,3 @@ def canUnlockAll(boxes):
             keys.extend(boxes[key])
 
     return all(opened_boxes)
-
