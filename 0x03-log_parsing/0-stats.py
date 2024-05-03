@@ -13,7 +13,8 @@ def print_stats():
     """print_stats"""
     print("File size: {}".format(total_size))
     for code in sorted(status_codes.keys()):
-        print("{}: {}".format(code, status_codes[code]))
+        if isinstance(code, int):
+            print("{}: {}".format(code, status_codes[code]))
 
 
 def signal_handler(sig, frame):
