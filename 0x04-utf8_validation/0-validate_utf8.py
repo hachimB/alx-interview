@@ -48,7 +48,9 @@ def validUTF8(data):
                 num_bytes_to_follow = 2
             elif (byte >> 5) == 0b110:
                 num_bytes_to_follow = 1
-            elif (byte >> 7) & 1:  # Check if MSB is set
+            elif (byte >> 7) == 0:  # This is a standalone character
+                continue
+            else:  # MSB is set, but it's not a valid start of a UTF-8 character
                 return False
         else:
             if (byte >> 6) != 0b10:
