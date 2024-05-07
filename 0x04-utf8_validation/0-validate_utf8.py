@@ -10,7 +10,7 @@ def validUTF8(data):
     for byte in data:
         # Check if the current byte represents the start of a new UTF-8
         # character
-        if num_bytes_to_follow == 0:
+        if byte >> 6 == 0b0:
             # Count the number of leading 1s in the byte
             mask = 1 << 7
             while mask & byte:
