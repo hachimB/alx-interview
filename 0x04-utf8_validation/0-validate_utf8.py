@@ -8,6 +8,6 @@ def validUTF8(data):
         binary = bin(i)
         if binary[2] == '0' or binary[2:5] == '110'\
                 or binary[2:6] == '1110' or binary[2:7] == '11110':
-            return False
-        else:
             return True
+        else:
+            return False
