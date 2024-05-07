@@ -7,7 +7,7 @@ def validUTF8(data):
     bytes_to_check = 0
     for i in data:
         if i < 0 or i > 255:
-             return False
+            return False
         if bytes_to_check == 0:
             # Use bitwise shift to count the number of leading 1s
             if (i & 0b10000000) == 0:
@@ -25,4 +25,4 @@ def validUTF8(data):
             if (i & 0b11000000) != 0b10000000:
                 return False
             bytes_to_check -= 1
-    return True
+    return bytes_to_check == 0
