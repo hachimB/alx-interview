@@ -52,7 +52,8 @@ def validUTF8(data):
 
         # If num_bytes_to_follow is not 0, the current byte should start with
         # "10"
-        elif byte >> 6 != 0b10:
+        # elif byte >> 6 != 0b10:
+        else:
             return False
 
         # Decrease the count of expected bytes following the current byte
