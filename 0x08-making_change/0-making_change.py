@@ -13,6 +13,7 @@
 #             dp[amount] = min(dp[amount], 1 + dp[amount - coin])
 #     return -1 if dp[total] == float('inf') else dp[total]
 def makeChange(coins, total):
+    """makeChange function"""
     if total <= 0:
         return 0
 
