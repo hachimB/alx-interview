@@ -39,7 +39,7 @@ def isWinner(x, nums):
     Maria = 0
     Ben = 0
     for i in range(x):
-        arr = sieve_of_eratosthenes(nums[i])
+        arr = generatePrime(nums[i])
         if len(arr) % 2 == 0:
             Ben += 1
         else:
